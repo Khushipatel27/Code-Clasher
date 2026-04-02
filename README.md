@@ -18,11 +18,19 @@ The full pipeline — question generation, code evaluation, and post-match feedb
 
 ---
 
-## 📸 Screens
+## 📸 Screenshots
 
-| Home | Arena | Win | Retry |
-|------|-------|-----|-------|
-| ![Home](assets/home.png) | ![Battle](assets/matchup.png) | ![Win](assets/battle-win.png) | ![Retry](assets/battle-retry.png) |
+**Home — Pick your language, difficulty, and name**
+![Home Screen](asset/Screenshot%202026-04-02%20143805.png)
+
+**Battle Arena — You vs SyntaxBot, live challenge**
+![Battle Screen](asset/Screenshot%202026-04-02%20143500.png)
+
+**Victory — Confetti, Gemini feedback, next round**
+![Win Screen](asset/Screenshot%202026-04-02%20143714.png)
+
+**Defeat — Bot wins, try again or back to menu**
+![Loss Screen](asset/Screenshot%202026-04-02%20143523.png)
 
 ---
 
@@ -156,7 +164,7 @@ code-clash/
 │   ├── .env.example            ← Environment variable template — copy to .env
 │   └── package.json
 │
-├── assets/                     ← Screenshots for README
+├── asset/                      ← Screenshots for README
 ├── vite.config.js              ← Vite config — proxies /api and /socket.io to :5000
 ├── package.json
 └── .gitignore
