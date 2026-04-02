@@ -144,6 +144,7 @@ function App() {
   const [attempts,     setAttempts]     = useState(0);
   const [lives,        setLives]        = useState(MAX_LIVES);
   const [outOfLives,   setOutOfLives]   = useState(false);
+  const [connError,    setConnError]    = useState(false);
   const [copyDone,     setCopyDone]     = useState(false);
   const [botTaunt,     setBotTaunt]     = useState(BOT_TAUNTS[0]);
   const tauntRef = useRef(null);
@@ -224,7 +225,7 @@ function App() {
       if (botEntry?.code) setBotCode(botEntry.code);
     });
     socket.on('match_error',   ({ message }) => { setQuestion(message); setGameStatus('active'); });
-    socket.on('connect_error', ()            => { setQuestion('Cannot connect — is the backend running?'); setGameStatus('active'); });
+    socket.on('connect_error', () => { setConnError(true); setGameStatus('error'); });
   }
 
   async function startBattle() {
@@ -241,7 +242,7 @@ function App() {
     setUserCode(''); setBotCode(''); setQuestion(''); setHint('');
     setWinner(''); setMatchFeedback(null); setAttempts(0);
     setRoundNumber(1); setSessionWins(0); setSessionLosses(0);
-    setLives(MAX_LIVES); setOutOfLives(false);
+    setLives(MAX_LIVES); setOutOfLives(false); setConnError(false);
     setGameStatus('countdown'); setCountdownNum(null);
     setScreen('battle');
 
@@ -410,6 +411,43 @@ function App() {
   // ── BATTLE ───────────────────────────────────────────────────
   if (screen === 'battle') {
     const wonRound = gameStatus === 'finished' && winner === playerName.trim() && !outOfLives;
+
+    // ── Backend not running ──────────────────────────────────────
+    if (connError) {
+      return (
+        <div className="battle-root">
+          <div className="battle-topbar">
+            <span className="battle-title">CODE CLASH</span>
+            <button className="back-btn-top" onClick={goHome}>← Menu</button>
+          </div>
+          <div className="conn-error-screen">
+            <div className="conn-error-icon">⚠️</div>
+            <h2 className="conn-error-title">Backend Not Running</h2>
+            <p className="conn-error-body">
+              The game server isn't reachable. Start the backend, then try again.
+            </p>
+            <div className="conn-error-steps">
+              <p className="conn-step-label">Open a terminal and run:</p>
+              <div className="conn-code-block">
+                <code>cd backend</code>
+                <code>npm run dev</code>
+              </div>
+              <p className="conn-step-label">Then make sure the frontend is running in a separate terminal:</p>
+              <div className="conn-code-block">
+                <code>npm start</code>
+              </div>
+              <p className="conn-step-note">Backend runs on port 5000 · Frontend on port 5173</p>
+            </div>
+            <div className="conn-error-actions">
+              <button className="submit-btn" onClick={() => { setConnError(false); startBattle(); }}>
+                Try Again
+              </button>
+              <button className="back-btn" onClick={goHome}>← Back to Menu</button>
+            </div>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="battle-root">

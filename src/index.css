@@ -922,6 +922,81 @@ kbd {
   100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
 
+/* ─── CONNECTION ERROR SCREEN ────────────────────────────────── */
+.conn-error-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.conn-error-icon { font-size: 56px; }
+
+.conn-error-title {
+  font-size: 32px;
+  color: #ff9a9a;
+}
+
+.conn-error-body {
+  color: var(--yellow);
+  font-size: 16px;
+  max-width: 480px;
+  opacity: 0.85;
+}
+
+.conn-error-steps {
+  background: rgba(0,0,0,0.35);
+  border: 2px solid var(--red-mid);
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+  width: 100%;
+  text-align: left;
+}
+
+.conn-step-label {
+  color: var(--yellow-dim);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.conn-code-block {
+  background: #0d0404;
+  border: 1px solid var(--red-mid);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.conn-code-block code {
+  font-family: var(--font-code);
+  font-size: 15px;
+  color: #7bbf6a;
+}
+
+.conn-step-note {
+  color: rgba(226,211,122,0.35);
+  font-size: 12px;
+  font-family: var(--font-code);
+}
+
+.conn-error-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ─── SCROLLBAR (global) ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
