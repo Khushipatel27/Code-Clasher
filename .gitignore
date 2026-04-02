@@ -1,0 +1,45 @@
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Build output ──────────────────────────────────────────────
+dist/
+build/
+.parcel-cache/
+.vite/
+
+# ── Environment / Secrets ─────────────────────────────────────
+# NEVER commit real .env files — use .env.example instead
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# ── Database ──────────────────────────────────────────────────
+*.mdb
+*.db
+*.sqlite
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── OS / Editor ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Misc ──────────────────────────────────────────────────────
+*.tgz
+.cache/
