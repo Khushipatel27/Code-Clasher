@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🐞 Code Clash
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -6,7 +8,9 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=flat-square&logo=google&logoColor=white)
 
-> *Code fast. Clash harder. Win the round.*
+*Code fast. Clash harder. Win the round.*
+
+</div>
 
 **Code Clash** is a real-time competitive coding game where you race against **SyntaxBot** — an AI opponent powered by Google Gemini. Pick your language (Python, JavaScript, or Java), choose a difficulty, and write a correct solution before the bot does. Wrong answers cost you a life and give you a hint. Three lives per round — lose them all and the round is forfeit. Every question is AI-generated and unique per match. Wins are tracked on a persistent leaderboard backed by MongoDB.
 
