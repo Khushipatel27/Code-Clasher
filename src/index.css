@@ -252,7 +252,7 @@ html, body {
 .lb-rank { font-size: 18px; width: 28px; }
 .lb-name { flex: 1; color: var(--yellow); font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lb-wins { color: var(--yellow-dim); font-size: 14px; font-weight: bold; }
-.lb-empty { color: rgba(226,211,122,0.5); font-size: 15px; padding: 20px 16px; text-align: center; }
+.lb-empty { color: rgba(226,211,122,0.5); font-size: 14px; padding: 20px 16px; text-align: center; letter-spacing: 0; }
 
 /* ─── HOW TO PLAY MODAL ──────────────────────────────────────── */
 .modal-overlay {

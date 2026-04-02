@@ -435,8 +435,23 @@ function App() {
         <div className="arena-row">
           {/* Player beetle */}
           <div className="beetle-card player-card">
-            <svg width="80" height="80" viewBox="0 0 1050 1095">
-              <path d="M1050 405.182C1050 134.568 758.555 -158.717 525 100.421C322.386 -128.606 0 134.568 0 405.182C0 675.796 309.411 899.532 525 1095C747.576 901.559 1050 675.796 1050 405.182Z" fill="#526022"/>
+            <svg width="80" height="80" viewBox="0 0 100 100">
+              {/* Body */}
+              <ellipse cx="50" cy="60" rx="28" ry="33" fill="#526022"/>
+              {/* Wing split */}
+              <line x1="50" y1="28" x2="50" y2="92" stroke="#3a4518" strokeWidth="1.5"/>
+              {/* Head */}
+              <circle cx="50" cy="24" r="13" fill="#3a4518"/>
+              {/* Antennae */}
+              <line x1="44" y1="13" x2="35" y2="3" stroke="#3a4518" strokeWidth="1.5"/>
+              <line x1="56" y1="13" x2="65" y2="3" stroke="#3a4518" strokeWidth="1.5"/>
+              <circle cx="35" cy="3" r="2.5" fill="#526022"/>
+              <circle cx="65" cy="3" r="2.5" fill="#526022"/>
+              {/* Spots */}
+              <circle cx="38" cy="54" r="5" fill="#3a4518" opacity="0.5"/>
+              <circle cx="62" cy="54" r="5" fill="#3a4518" opacity="0.5"/>
+              <circle cx="40" cy="70" r="4" fill="#3a4518" opacity="0.5"/>
+              <circle cx="60" cy="70" r="4" fill="#3a4518" opacity="0.5"/>
             </svg>
             <p className="beetle-label">{playerName || 'You'}</p>
             <Hearts lives={lives} />
@@ -458,8 +473,23 @@ function App() {
 
           {/* Bot beetle */}
           <div className="beetle-card bot-card">
-            <svg className={gameStatus === 'active' ? 'bot-pulse' : ''} width="80" height="80" viewBox="0 0 1050 1095">
-              <path d="M1050 405.182C1050 134.568 758.555 -158.717 525 100.421C322.386 -128.606 0 134.568 0 405.182C0 675.796 309.411 899.532 525 1095C747.576 901.559 1050 675.796 1050 405.182Z" fill="#8B1A1A"/>
+            <svg className={gameStatus === 'active' ? 'bot-pulse' : ''} width="80" height="80" viewBox="0 0 100 100">
+              {/* Body */}
+              <ellipse cx="50" cy="60" rx="28" ry="33" fill="#8B1A1A"/>
+              {/* Wing split */}
+              <line x1="50" y1="28" x2="50" y2="92" stroke="#5a0f0f" strokeWidth="1.5"/>
+              {/* Head */}
+              <circle cx="50" cy="24" r="13" fill="#5a0f0f"/>
+              {/* Antennae */}
+              <line x1="44" y1="13" x2="35" y2="3" stroke="#5a0f0f" strokeWidth="1.5"/>
+              <line x1="56" y1="13" x2="65" y2="3" stroke="#5a0f0f" strokeWidth="1.5"/>
+              <circle cx="35" cy="3" r="2.5" fill="#8B1A1A"/>
+              <circle cx="65" cy="3" r="2.5" fill="#8B1A1A"/>
+              {/* Spots */}
+              <circle cx="38" cy="54" r="5" fill="black" opacity="0.35"/>
+              <circle cx="62" cy="54" r="5" fill="black" opacity="0.35"/>
+              <circle cx="40" cy="70" r="4" fill="black" opacity="0.35"/>
+              <circle cx="60" cy="70" r="4" fill="black" opacity="0.35"/>
             </svg>
             <p className="beetle-label">SyntaxBot</p>
             {gameStatus === 'active' && (
